@@ -1,4 +1,4 @@
-package com.videodownloader.twittervideoindir;
+package com.videodownloader.twittervideo;
 
 import android.app.Activity;
 import android.content.Context;

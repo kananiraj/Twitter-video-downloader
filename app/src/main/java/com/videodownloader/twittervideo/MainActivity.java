@@ -1,4 +1,4 @@
-package com.videodownloader.twittervideoindir;
+package com.videodownloader.twittervideo;
 
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
@@ -56,6 +56,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.Constants;
 import com.google.firebase.perf.network.FirebasePerfUrlConnection;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import com.videodownloader.twittervideo.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -143,7 +144,9 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             ((Button) findViewById(R.id.button4)).setCompoundDrawables(getResources().getDrawable(R.drawable.ic_menu_gallery2), null, null, null);
             ((Button) findViewById(R.id.button4)).setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_menu_gallery2, 0, 0, 0);
         }
-        BillingProcessor billingProcessor = new BillingProcessor(this, "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt2n0YtZycTJQdooTstnS3W1lz0p/MYC3N+87j+mJHaNAUY0C2biR79e+WE+ySMIbLp9B1gfpSHudRWRZo+/jsbG5ahGudcZNwgIsoXdYvc5s9R6YilnV9Z3m5uIMJcjmJLhv3xIKOur6U4RgbLWxMkt1mqfzviFH2hpVpnYSba6crv9oYj15beJr8ga9Y0uJ2BZWXF3/N9zpFdpeU1RWMGjWuNrU7Yiy3gecyqqRNEF4rqigJJvSUo/UkMBbGr9umtsOJt3TqGLTzapiA4LxPPxRPHvLSOuU9tAa4wK3ePsyUp7GdpU3TqctPtpVBhMYSWIXWQHEruQAYkufIIkKFwIDAQAB", this);
+        SharedPreferenceManager instance = SharedPreferenceManager.getInstance(MainActivity.this);
+
+        BillingProcessor billingProcessor = new BillingProcessor(this, instance.getValueFromPref("isprokey"), this);
         this.bp = billingProcessor;
         billingProcessor.initialize();
         if (Build.VERSION.SDK_INT >= 21) {
@@ -264,7 +267,9 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         final Intent intent = new Intent(getBaseContext(), Gallery.class);
         boolean z = this.premium;
         if (!z) {
-            InterstitialAd interAd = this.loaderService.getInterAd(getString(R.string.GalleryActivityInter));
+            SharedPreferenceManager instance = SharedPreferenceManager.getInstance(MainActivity.this);
+
+            InterstitialAd interAd = this.loaderService.getInterAd(instance.getValueFromPref("adid1"));
             this.GalleryActivityInter = interAd;
             if (interAd != null) {
                 interAd.setFullScreenContentCallback(new FullScreenContentCallback() {
@@ -307,12 +312,16 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
 
     private void loadMainAds() {
         if (!this.premium) {
-            this.mAdView.loadAd(this.loaderService.getBannerAd(getString(R.string.MainBottomAds)));
+            SharedPreferenceManager instance = SharedPreferenceManager.getInstance(MainActivity.this);
+
+            this.mAdView.loadAd(this.loaderService.getBannerAd(instance.getValueFromPref("adid2")));
         } else {
             this.mAdView.setVisibility(View.GONE);
         }
-        this.OnClickButtonDown = this.loaderService.getInterAd(getString(R.string.OnClickButtonDown));
-        this.GalleryActivityInter = this.loaderService.getInterAd(getString(R.string.GalleryActivityInter));
+        SharedPreferenceManager instance = SharedPreferenceManager.getInstance(MainActivity.this);
+
+        this.OnClickButtonDown = this.loaderService.getInterAd(instance.getValueFromPref("adid3"));
+        this.GalleryActivityInter = this.loaderService.getInterAd(instance.getValueFromPref("adid4"));
     }
 
     @Override
@@ -378,7 +387,9 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
 
     public void downloadClick(View view) {
         final String str;
-        InterstitialAd interAd = this.loaderService.getInterAd(getString(R.string.OnClickButtonDown));
+        SharedPreferenceManager instance = SharedPreferenceManager.getInstance(MainActivity.this);
+
+        InterstitialAd interAd = this.loaderService.getInterAd(instance.getValueFromPref("adid5"));
         this.OnClickButtonDown = interAd;
         if (!this.premium && interAd != null) {
             interAd.show(this);
@@ -535,7 +546,9 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
                             RecyclerView recyclerView = (RecyclerView) inflate.findViewById(R.id.rv10);
                             if (!MainActivity.this.premium) {
                                 MainActivity.this.mainActivityDialogBanner = (AdView) inflate.findViewById(R.id.mainActivityDialogBanner);
-                                MainActivity.this.mainActivityDialogBanner.loadAd(MainActivity.this.loaderService.getBannerAd(MainActivity.this.getString(R.string.mainActivityDialogBanner)));
+                                SharedPreferenceManager instance = SharedPreferenceManager.getInstance(MainActivity.this);
+
+                                MainActivity.this.mainActivityDialogBanner.loadAd(MainActivity.this.loaderService.getBannerAd(instance.getValueFromPref("adid2")));
                             }
                             VideoObjectAdapter videoObjectAdapter = new VideoObjectAdapter(arrayList, MainActivity.this, MainActivity.this.getWindow(), MainActivity.this, MainActivity.this.premium);
                             recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));

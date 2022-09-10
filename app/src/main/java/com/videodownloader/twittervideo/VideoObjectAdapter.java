@@ -1,4 +1,4 @@
-package com.videodownloader.twittervideoindir;
+package com.videodownloader.twittervideo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -59,7 +59,10 @@ public class VideoObjectAdapter extends RecyclerView.Adapter<VideoObjectAdapter.
         InitNeeds initNeeds = ((ApplicationClass) context2.getApplicationContext()).loaderService;
         this.loaderService = initNeeds;
         if (!z) {
-            this.OnClickButtonDown = initNeeds.getInterAd(context2.getString(R.string.OnClickInsideDown));
+
+            SharedPreferenceManager instance = SharedPreferenceManager.getInstance(context);
+            String adid1 =  instance.getValueFromPref("adid1");
+            this.OnClickButtonDown = initNeeds.getInterAd(adid1);
         }
     }
 
@@ -221,8 +224,11 @@ public class VideoObjectAdapter extends RecyclerView.Adapter<VideoObjectAdapter.
             } catch (Exception unused) {
             }
             if (!VideoObjectAdapter.this.premium) {
+
+                SharedPreferenceManager instance = SharedPreferenceManager.getInstance(context);
+                String adid4 =  instance.getValueFromPref("adid4");
                 VideoObjectAdapter videoObjectAdapter = VideoObjectAdapter.this;
-                videoObjectAdapter.OnClickButtonDown = videoObjectAdapter.loaderService.getInterAd(VideoObjectAdapter.this.context.getString(R.string.OnClickInsideDown));
+                videoObjectAdapter.OnClickButtonDown = videoObjectAdapter.loaderService.getInterAd(adid4);
                 if (VideoObjectAdapter.this.OnClickButtonDown != null) {
                     VideoObjectAdapter.this.OnClickButtonDown.show((MainActivity) VideoObjectAdapter.this.context);
                 }

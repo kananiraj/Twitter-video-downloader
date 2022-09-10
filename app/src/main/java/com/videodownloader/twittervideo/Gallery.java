@@ -1,4 +1,4 @@
-package com.videodownloader.twittervideoindir;
+package com.videodownloader.twittervideo;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -38,7 +38,10 @@ public class Gallery extends AppCompatActivity {
             z = true;
         }
         if (!z) {
-            ((AdView) findViewById(R.id.GalleryActivityBottomBanner)).loadAd(this.loaderService.getBannerAd(getString(R.string.GalleryActivityBottomBanner)));
+
+            SharedPreferenceManager instance = SharedPreferenceManager.getInstance(Gallery.this);
+            String adid2 =  instance.getValueFromPref("adid2");
+            ((AdView) findViewById(R.id.GalleryActivityBottomBanner)).loadAd(this.loaderService.getBannerAd(adid2));
         }
         refrestList();
     }

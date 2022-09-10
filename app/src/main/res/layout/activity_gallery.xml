@@ -107,7 +107,6 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            app:adSize="BANNER"
-            app:adUnitId="@string/GalleryActivityBottomBanner" />
+            app:adSize="BANNER"/>
     </com.google.android.material.appbar.AppBarLayout>
 </RelativeLayout>

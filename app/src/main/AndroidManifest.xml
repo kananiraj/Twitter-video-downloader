@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.videodownloader.twittervideoindir"
+    package="com.videodownloader.twittervideo"
     android:versionCode="1"
     android:versionName="1.0">
 
@@ -52,14 +52,14 @@
             android:value="true" />
 
         <activity
-            android:name="com.videodownloader.twittervideoindir.Gallery"
+            android:name="com.videodownloader.twittervideo.Gallery"
             android:exported="true" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/appID" />
         <provider
-            android:name="com.videodownloader.twittervideoindir.GenericFileProvider"
-            android:authorities="com.videodownloader.twittervideoindir.fileprovider"
+            android:name="com.videodownloader.twittervideo.GenericFileProvider"
+            android:authorities="com.videodownloader.twittervideo.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -68,7 +68,7 @@
         </provider>
 
         <activity
-            android:name="com.videodownloader.twittervideoindir.MainActivity"
+            android:name="com.videodownloader.twittervideo.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -77,7 +77,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.videodownloader.twittervideoindir.FirstOpen"
+            android:name="com.videodownloader.twittervideo.FirstOpen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

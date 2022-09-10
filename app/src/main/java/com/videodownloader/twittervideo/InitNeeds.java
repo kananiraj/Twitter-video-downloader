@@ -1,4 +1,6 @@
-package com.videodownloader.twittervideoindir;
+package com.videodownloader.twittervideo;
+
+import static com.videodownloader.twittervideo.SharedPreferenceManager.adid2;
 
 import android.content.Context;
 import android.util.Log;
@@ -17,6 +19,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class InitNeeds {
     private final String TAG = "Loader ";
@@ -40,12 +43,22 @@ public class InitNeeds {
     }
 
     public void adLoad() {
-        this.interAds.put(this.context.getString(R.string.OnClickButtonDown), new ArrayList<>());
-        this.interAds.put(this.context.getString(R.string.OnClickInsideDown), new ArrayList<>());
-        this.interAds.put(this.context.getString(R.string.GalleryActivityInter), new ArrayList<>());
-        this.bannerAds.put(this.context.getString(R.string.MainBottomAds), new ArrayList());
-        this.bannerAds.put(this.context.getString(R.string.mainActivityDialogBanner), new ArrayList());
-        this.bannerAds.put(this.context.getString(R.string.GalleryActivityBottomBanner), new ArrayList());
+        SharedPreferenceManager instance = SharedPreferenceManager.getInstance(context);
+        String adid1 =  instance.getValueFromPref("adid1");
+        String adid2 =  instance.getValueFromPref("adid2");
+        String adid3 =  instance.getValueFromPref("adid3");
+        String adid4 =  instance.getValueFromPref("adid4");
+        String adid5 =  instance.getValueFromPref("adid5");
+
+
+        this.interAds.put(adid1, new ArrayList<>());
+        this.interAds.put(adid4, new ArrayList<>());
+        this.interAds.put(adid3, new ArrayList<>());
+        this.bannerAds.put(adid2, new ArrayList());
+        this.bannerAds.put(adid5, new ArrayList());
+        this.bannerAds.put(adid2, new ArrayList());
+
+
         Iterator<Map.Entry<String, ArrayList<InterstitialAd>>> it = this.interAds.entrySet().iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -96,11 +109,17 @@ public class InitNeeds {
 
     public AdRequest getBannerAd(String str) {
         AdRequest adRequest = null;
-        for (int i = 0; i < this.bannerAds.get(str).size(); i++) {
-            if (this.bannerAds.get(str).get(i) != null) {
-                adRequest = this.bannerAds.get(str).get(i);
-            } else {
+        int size = 0;
+        if (bannerAds != null) {
+            size = bannerAds.size();
+           if (size !=0) {
+                for (int i = 0; i < this.bannerAds.get(str).size(); i++) {
+                    if (this.bannerAds.get(str).get(i) != null) {
+                        adRequest = this.bannerAds.get(str).get(i);
+                    } else {
 
+                    }
+                }
             }
         }
         return adRequest;
@@ -108,10 +127,12 @@ public class InitNeeds {
 
     public InterstitialAd getInterAd(String str) {
         InterstitialAd interstitialAd = null;
-        for (int i = 0; i < this.interAds.get(str).size(); i++) {
-            if (this.interAds.get(str).get(i) != null) {
-                interstitialAd = this.interAds.get(str).get(i);
-                loadInter(this.context, str);
+        if(interAds != null) {
+            for (int i = 0; i < this.interAds.get(str).size(); i++) {
+                if (this.interAds.get(str).get(i) != null) {
+                    interstitialAd = this.interAds.get(str).get(i);
+                    loadInter(this.context, str);
+                }
             }
         }
         return interstitialAd;

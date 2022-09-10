@@ -47,11 +47,6 @@
     <string name="website">byteBitTech.com</string>
     <string name="wewillnotask">We are not going to ask this from anywhere.</string>
     <string name="Downloads">Downloads</string>
-    <string name="GalleryActivityBottomBanner">ca-app-pub-4346076281424407/2797401301</string>
-    <string name="GalleryActivityInter">ca-app-pub-4346076281424407/8581400391</string>
-    <string name="MainBottomAds">ca-app-pub-4346076281424407/5578302188</string>
-    <string name="OnClickButtonDown">ca-app-pub-4346076281424407/5359630248</string>
-    <string name="OnClickInsideDown">ca-app-pub-4346076281424407/8488711681</string>
     <string name="look_no_create_post_by">Click the tutorial to learn how to download</string>
     <string name="create_post">No downloads yet.</string>
     <string name="mainActivityDialogBanner">ca-app-pub-4346076281424407/5875346008</string>
@@ -84,4 +79,5 @@
     <string name="navigation_drawer_close">Close</string>
     <string name="okay">Okay</string>
     <string name="appID">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="adjson">adjson</string>
 </resources>
