@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorSecondary">@color/fontColor</item>
+        <item name="android:windowBackground">@drawable/gradient_background</item>
+        <item name="android:windowAnimationStyle">@style/AppTheme.WindowTransition</item>
+        <item name="autoCompleteTextViewStyle">@style/SearchTextLight</item>
+        <item name="colorAccent">@color/materialBlue</item>
+        <item name="colorControlHighlight">@color/light200</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.WindowTransition" parent="@style/AppTheme">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+
+    <style name="SearchTextLight" parent="@style/Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:textColor">@color/fontColor</item>
+        <item name="android:textColorHint">@color/fontColor</item>
+    </style>
+
+    <style name="ButtonStyle" parent="@style/Base.Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar"></style>
+
+    <style name="MyCustomAlert1" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@drawable/custom_alert1</item>
+        <item name="colorAccent">@color/purpleDark</item>
+    </style>
+
+    <style name="CustomText">
+    </style>
+</resources>

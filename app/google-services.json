@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "470266567236",
+    "project_id": "test-f5564",
+    "storage_bucket": "test-f5564.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470266567236:android:d8253711e6e76c66e53a11",
+        "android_client_info": {
+          "package_name": "com.videodownloader.twittervideoindir"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470266567236-1qaseeoo2s9ssnlltroignb6m78777b0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0zYe4MH-N1WjPHb7CxKkp5gG1Mzo3k08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470266567236-1qaseeoo2s9ssnlltroignb6m78777b0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
