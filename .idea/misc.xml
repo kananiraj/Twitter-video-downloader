@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/activity_first_open.xml" value="0.33" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/activity_gallery.xml" value="0.33425925925925926" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/content_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/download_dialog.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/download_dialog_content.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/main_downloaded_file.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/menu_counter.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/nav_head.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/6115840/AndroidStudioProjects/Twitter-video-downloader/app/src/main/res/layout/rating_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/6115840/Downloads/MyApplication5/app/src/main/res/drawable/btn_corner4.xml" value="0.232" />
         <entry key="..\:/Users/6115840/Downloads/MyApplication5/app/src/main/res/drawable/gradient_background.xml" value="0.232" />
         <entry key="..\:/Users/6115840/Downloads/MyApplication5/app/src/main/res/layout/activity_first_open.xml" value="0.36666666666666664" />
